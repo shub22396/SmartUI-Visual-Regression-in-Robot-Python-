@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.0 on win32)" generated="20220111 14:44:31.749" rpa="false" schemaversion="2">
+<suite id="s1" name="Sample Test" source="D:\python-robot-framework-main\tests\sample_test.robot">
+<test id="s1-t1" name="Example of connecting to Lambdatest via Robot Framework">
+<kw name="Open test browser" library="Common" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://lambdatest.github.io/sample-todo-app/</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220111 14:44:32.021" level="FAIL">Variable '${BROWSER}' not found.</msg>
+<status status="FAIL" starttime="20220111 14:44:32.018" endtime="20220111 14:44:32.021"/>
+</kw>
+<timeout value="50 minutes"/>
+<status status="FAIL" starttime="20220111 14:44:32.016" endtime="20220111 14:44:32.022"/>
+</kw>
+<kw name="Close test browser" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Report Lambdatest Status</arg>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Report Lambdatest Status" library="LambdaTestStatus">
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<msg timestamp="20220111 14:44:32.023" level="INFO">Executing JavaScript:
+lambda-status=failed
+Without any arguments.</msg>
+<msg timestamp="20220111 14:44:32.025" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20220111 14:44:32.023" endtime="20220111 14:44:32.025"/>
+</kw>
+<status status="FAIL" starttime="20220111 14:44:32.023" endtime="20220111 14:44:32.025"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220111 14:44:32.025" endtime="20220111 14:44:32.025"/>
+</kw>
+<status status="FAIL" starttime="20220111 14:44:32.022" endtime="20220111 14:44:32.025">No browser is open.</status>
+</kw>
+<timeout value="50 minutes"/>
+<status status="FAIL" starttime="20220111 14:44:32.015" endtime="20220111 14:44:32.026">Setup failed:
+Variable '${BROWSER}' not found.
+
+Also teardown failed:
+No browser is open.</status>
+</test>
+<status status="FAIL" starttime="20220111 14:44:31.751" endtime="20220111 14:44:32.028"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Sample Test">Sample Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220111 14:44:32.008" level="ERROR">Error in file 'D:\python-robot-framework-main\Resources\Common.robot' on line 16: Setting variable '${BROWSER}' failed: Variable '${chrome}' not found.</msg>
+<msg timestamp="20220111 14:44:32.010" level="ERROR">Error in file 'D:\python-robot-framework-main\Resources\Common.robot' on line 7: Setting variable '@{_tmp}' failed: Variable '${chrome}' not found.</msg>
+<msg timestamp="20220111 14:44:32.012" level="ERROR">Error in file 'D:\python-robot-framework-main\Resources\Common.robot' on line 17: Setting variable '${CAPABILITIES}' failed: Variable '${_tmp}' not found. Did you mean:
+    ${TEMPDIR}</msg>
+</errors>
+</robot>

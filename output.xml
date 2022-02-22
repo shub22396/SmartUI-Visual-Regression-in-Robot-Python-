@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.0 on win32)" generated="20220222 15:26:17.060" rpa="false" schemaversion="2">
+<suite id="s1" name="Visualui" source="D:\python-robot-framework-main - Copy\Tests\visualui.robot">
+<test id="s1-t1" name="Visual UI Regression">
+<kw name="Open test browser" library="Common" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://www.lambdatest.com/</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220222 15:26:17.264" level="INFO">Opening browser 'chrome' to base url 'https://www.lambdatest.com/' through remote server at 'https://shubhamr:M1hTTfelp95y0WKq0MSKORBzWD7xpFGOTv5KlMTZ18qnAcGjId@beta-smartui-hub.lambdatest.com/wd/hub'.</msg>
+<status status="PASS" starttime="20220222 15:26:17.263" endtime="20220222 15:26:31.955"/>
+</kw>
+<timeout value="50 minutes"/>
+<status status="PASS" starttime="20220222 15:26:17.263" endtime="20220222 15:26:31.955"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>https://www.lambdatest.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220222 15:26:31.957" level="INFO">Opening url 'https://www.lambdatest.com/'</msg>
+<status status="PASS" starttime="20220222 15:26:31.956" endtime="20220222 15:26:33.413"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220222 15:26:35.423" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220222 15:26:33.414" endtime="20220222 15:26:35.423"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>smartui.takeScreenshot</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220222 15:26:35.426" level="INFO">Executing JavaScript:
+smartui.takeScreenshot
+Without any arguments.</msg>
+<status status="PASS" starttime="20220222 15:26:35.424" endtime="20220222 15:26:37.154"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Screen Shot has been taken Successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220222 15:26:37.155" level="INFO">Screen Shot has been taken Successfully</msg>
+<status status="PASS" starttime="20220222 15:26:37.155" endtime="20220222 15:26:37.155"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220222 15:26:40.160" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220222 15:26:37.156" endtime="20220222 15:26:40.160"/>
+</kw>
+<kw name="Close test browser" library="Common" type="TEARDOWN">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Report Lambdatest Status</arg>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Report Lambdatest Status" library="LambdaTestStatus">
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<msg timestamp="20220222 15:26:40.165" level="INFO">Executing JavaScript:
+lambda-status=passed
+Without any arguments.</msg>
+<msg timestamp="20220222 15:26:42.525" level="INFO">Executing JavaScript:
+lambda-name=Visual UI Regression
+Without any arguments.</msg>
+<status status="PASS" starttime="20220222 15:26:40.163" endtime="20220222 15:26:44.845"/>
+</kw>
+<status status="PASS" starttime="20220222 15:26:40.163" endtime="20220222 15:26:44.845"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220222 15:26:44.845" endtime="20220222 15:26:46.166"/>
+</kw>
+<status status="PASS" starttime="20220222 15:26:40.162" endtime="20220222 15:26:46.167"/>
+</kw>
+<status status="PASS" starttime="20220222 15:26:17.262" endtime="20220222 15:26:46.168"/>
+</test>
+<status status="PASS" starttime="20220222 15:26:17.061" endtime="20220222 15:26:46.171"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Visualui">Visualui</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
